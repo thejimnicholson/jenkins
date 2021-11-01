@@ -14,6 +14,9 @@ spec:
   nfs:
     server: 10.0.97.2
     path: /volume1/storage/jenkins
+  claimRef:
+    namespace: jenkins
+    name: jenkins-pvc
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
