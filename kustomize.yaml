@@ -1,4 +1,5 @@
 resources:
+- namespace.yaml
 - credentials.yaml
 - jenkins-volume.yaml
 - jenkins.yaml
