@@ -1,0 +1,22 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-ingress
+  namespace: jenkins
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    cert-manager.io/cluster-issuer: http-clusterissuer
+spec:
+  rules:
+  - host: jenkins.thejimnicholson.com
+    http:
+      paths:
+      - backend:
+          serviceName: jenkins
+          servicePort: 8080
+  tls:
+  - hosts:
+    - jenkins.thejimnicholson.com
+    secretName: jenkins.thejimnicholson.com

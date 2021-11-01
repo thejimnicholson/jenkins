@@ -1,0 +1,6 @@
+resources:
+- credentials.yaml
+- jenkins-volume.yaml
+- jenkins.yaml
+- jenkins-service.yaml
+- jenkins-ingress.yaml
