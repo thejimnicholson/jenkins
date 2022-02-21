@@ -15,7 +15,7 @@ spec:
       paths:
         - path: /
           pathType: Prefix
-        - backend:
+          backend:
             service
               name: jenkins
               port: 
