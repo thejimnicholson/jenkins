@@ -27,6 +27,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: jenkins-storage
   namespace: jenkins
+  annotations:
+    kustomize.toolkit.fluxcd.io/reconcile: disabled
 spec:
   storageClassName: "local-path"
   accessModes:
