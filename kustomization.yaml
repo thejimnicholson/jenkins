@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - credentials.yaml
-- jenkins-volume.yaml
-- jenkins.yaml
-- jenkins-service.yaml
-- jenkins-ingress.yaml
+#- jenkins-volume.yaml
+#- jenkins.yaml
+#- jenkins-service.yaml
+#- jenkins-ingress.yaml
