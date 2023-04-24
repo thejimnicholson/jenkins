@@ -18,7 +18,7 @@ spec:
         runAsUser: 0
       containers:
       - name: jenkins
-        image: jenkins/jenkins:2.390-jdk11
+        image: jenkins/jenkins:2.401-jdk11
         env:
           - name: TZ
             value: "America/Los_Angeles"
