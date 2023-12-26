@@ -33,3 +33,16 @@ spec:
     requests:
       storage: 50Gi
   volumeName: jenkins-pv
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jenkins-storage-nfs
+  namespace: jenkins
+spec:
+  storageClassName: nfs-client
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
