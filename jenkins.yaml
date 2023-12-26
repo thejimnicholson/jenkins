@@ -30,13 +30,13 @@ spec:
         volumeMounts:
           - name: jenkins-vol
             mountPath: /var/jenkins_home
-          - name: jenkins-vol.new
+          - name: jenkins-vol-new
             mountPath: /var/jenkins_home.new            
       volumes:
         - name: jenkins-vol
           persistentVolumeClaim:
             claimName: jenkins-storage
-        - name: jenkins-vol.new
+        - name: jenkins-vol-new
           persistentVolumeClaim:
             claimName: jenkins-storage-nfs            
   strategy:
