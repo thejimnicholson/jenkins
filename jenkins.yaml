@@ -29,14 +29,9 @@ spec:
             containerPort: 50000
         volumeMounts:
           - name: jenkins-vol
-            mountPath: /var/jenkins_home
-          - name: jenkins-vol-new
-            mountPath: /var/jenkins_home.new            
+            mountPath: /var/jenkins_home          
       volumes:
         - name: jenkins-vol
-          persistentVolumeClaim:
-            claimName: jenkins-storage
-        - name: jenkins-vol-new
           persistentVolumeClaim:
             claimName: jenkins-storage-nfs            
   strategy:
