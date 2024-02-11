@@ -16,6 +16,8 @@ spec:
       securityContext:
         fsGroup: 1000
         runAsUser: 0
+      nodeSelector:
+        nodetype: worker
       containers:
       - name: jenkins
         image: jenkins/jenkins:2.426.3-lts-jdk17
