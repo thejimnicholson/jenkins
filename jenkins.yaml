@@ -20,7 +20,7 @@ spec:
         nodetype: worker
       containers:
       - name: jenkins
-        image: jenkins/jenkins:2.426.3-lts-jdk17
+        image: jenkins/jenkins:2.440.1-lts-jdk17
         env:
           - name: TZ
             value: "America/Los_Angeles"
@@ -29,6 +29,13 @@ spec:
             containerPort: 8080
           - name: jnlp-port
             containerPort: 50000
+        resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+          requests:
+            cpu: "0.5"
+            memory: "512Mi"
         volumeMounts:
           - name: jenkins-vol
             mountPath: /var/jenkins_home          
