@@ -12,7 +12,8 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/group: Tools
     gethomepage.dev/icon: jenkins.png
-    gethomepage.dev/name: Jenkins    
+    gethomepage.dev/name: Jenkins 
+    gethomepage.dev/href: https://jenkins.thejimnicholson.com/   
 spec:
   rules:
     - host: jenkins.thejimnicholson.com
