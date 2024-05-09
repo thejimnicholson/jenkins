@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: jenkins
+        name: jenkins
     spec:
       securityContext:
         fsGroup: 1000
