@@ -13,6 +13,7 @@ spec:
       labels:
         app: jenkins
         name: jenkins
+        app.kubernetes.io/name: jenkins
     spec:
       securityContext:
         fsGroup: 1000
