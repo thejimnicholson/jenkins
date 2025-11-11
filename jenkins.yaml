@@ -22,12 +22,12 @@ spec:
         nodetype: worker
       initContainers:
       - name: jenkins-init
-        image: jenkins/jenkins:2.504.1-lts-jdk21
+        image: jenkins/jenkins:2.516.3-lts-jdk21
         command:
           - sh
           - -c
           - |
-            jenkins-plugin-cli --plugin-file /var/jenkins_home/plugin-config/plugins.txt
+            jenkins-plugin-cli --plugin-file /var/jenkins_home/plugin-config/plugins.txt --verbose
             cp -r -p /usr/share/jenkins/ref/plugins/. /var/jenkins_home/plugins/.
         env:
           - name: TZ
@@ -39,7 +39,7 @@ spec:
             mountPath: /var/jenkins_home/plugin-config
       containers:
       - name: jenkins
-        image: jenkins/jenkins:2.504.1-lts-jdk21
+        image: jenkins/jenkins:2.516.3-lts-jdk21
         env:
           - name: TZ
             value: "America/Los_Angeles"
