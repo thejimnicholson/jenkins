@@ -35,6 +35,8 @@ spec:
         volumeMounts:
           - name: jenkins-vol
             mountPath: /var/jenkins_home
+          - name: jenkins-plugins-config
+            mountPath: /var/jenkins_home/plugin-config
       containers:
       - name: jenkins
         image: jenkins/2.504.1-lts-jdk21
@@ -59,6 +61,9 @@ spec:
       volumes:
         - name: jenkins-vol
           persistentVolumeClaim:
-            claimName: jenkins-storage-nfs            
+            claimName: jenkins-storage-nfs
+        - name: jenkins-plugins-config
+          configMap:
+            name: jenkins-plugins            
   strategy:
     type: Recreate
