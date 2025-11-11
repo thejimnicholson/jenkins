@@ -7,3 +7,10 @@ resources:
 - jenkins.yaml
 - jenkins-service.yaml
 - jenkins-ingress.yaml
+
+configMapGenerator:
+- name: jenkins-plugins
+  namespace: jenkins
+  files:
+  - config/plugins.txt
+  disableNameSuffixHash: true
