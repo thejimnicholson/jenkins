@@ -20,23 +20,23 @@ spec:
         runAsUser: 0
       nodeSelector:
         nodetype: worker
-      # initContainers:
-      # - name: jenkins-init
-      #   image: jenkins/jenkins:2.504.1-lts-jdk21
-      #   command:
-      #     - sh
-      #     - -c
-      #     - |
-      #       jenkins-plugin-cli --plugin-file /var/jenkins_home/plugin-config/plugin.txt
-      #       cp -r -p /usr/share/jenkins/ref/plugins/. /var/jenkins_home/plugins/.
-      #   env:
-      #     - name: TZ
-      #       value: "America/Los_Angeles"
-      #   volumeMounts:
-      #     - name: jenkins-vol
-      #       mountPath: /var/jenkins_home
-      #     - name: jenkins-plugins-config
-      #       mountPath: /var/jenkins_home/plugin-config
+      initContainers:
+      - name: jenkins-init
+        image: jenkins/jenkins:2.504.1-lts-jdk21
+        command:
+          - sh
+          - -c
+          - |
+            jenkins-plugin-cli --plugin-file /var/jenkins_home/plugin-config/plugins.txt
+            cp -r -p /usr/share/jenkins/ref/plugins/. /var/jenkins_home/plugins/.
+        env:
+          - name: TZ
+            value: "America/Los_Angeles"
+        volumeMounts:
+          - name: jenkins-vol
+            mountPath: /var/jenkins_home
+          - name: jenkins-plugins-config
+            mountPath: /var/jenkins_home/plugin-config
       containers:
       - name: jenkins
         image: jenkins/jenkins:2.504.1-lts-jdk21
