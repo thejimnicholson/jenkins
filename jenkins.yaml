@@ -27,7 +27,7 @@ spec:
           - sh
           - -c
           - |
-            jenkins-plugin-cli --plugin-file ./plugin.txt
+            jenkins-plugin-cli --plugin-file /var/jenkins_home/plugin-config/plugin.txt
             cp -r -p /usr/share/jenkins/ref/plugins/. /var/jenkins_home/plugins/.
         env:
           - name: TZ
