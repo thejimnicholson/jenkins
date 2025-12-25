@@ -22,7 +22,7 @@ spec:
         nodetype: worker
       initContainers:
       - name: jenkins-init
-        image: jenkins/jenkins:2.516.3-lts-jdk21
+        image: jenkins/jenkins:2.528.3-lts-jdk21
         command:
           - sh
           - -c
