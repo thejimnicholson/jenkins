@@ -39,7 +39,7 @@ spec:
             mountPath: /var/jenkins_home/plugin-config
       containers:
       - name: jenkins
-        image: jenkins/jenkins:2.516.3-lts-jdk21
+        image: jenkins/jenkins:2.528.3-lts-jdk21
         env:
           - name: TZ
             value: "America/Los_Angeles"
